@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Utils {
     // average of two integers
     public static int average(int a, int b) {
-        return (int) Math.round(((double) a + b) / 2);
+        return (a + b) / 2;
     }
 
-    public static int binarySearch (ArrayList<integer> arr, int value) {
+    public static int binarySearch (ArrayList<Integer> arr, int value) {
         int low = 0;
         int high = arr.size() - 1;
         while (low <= high) {
@@ -20,10 +20,29 @@ public class Utils {
                 return average(low, high);
             }
         }
+        return -1;
+    }
+    
+    // binary search for an integer in an array
+    public static int binarySearch (int[] arr, int value) {
+        int low = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+            if (value > arr[average(low, high)]) {
+                low = average(low, high);
+            }
+            if (value < arr[average(low, high)]) {
+                high = average(low, high);
+            }
+            else {
+                return average(low, high);
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
-        ArrayList<integer> arr = new ArrayList<integer>();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
         arr.add(1);
         arr.add(2);
         arr.add(3);
@@ -83,6 +102,6 @@ public class Utils {
         arr.add(57);
         arr.add(58);
         arr.add(59);
-        binarySearch(arr, 50);
+        System.out.println(binarySearch(arr, 50));
     }
 }
