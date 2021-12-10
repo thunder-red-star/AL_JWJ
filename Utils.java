@@ -3,20 +3,21 @@ import java.util.ArrayList;
 public class Utils {
     // average of two integers
     public static int average(int a, int b) {
-        return (a + b) / 2;
+        return (int) Math.round((a + b) / 2.0);
     }
 
     public static int binarySearch (ArrayList<Integer> arr, int value) {
         int low = 0;
         int high = arr.size() - 1;
         while (low <= high) {
+            System.out.println(low + " " + high);
             if (value > arr.get(average(low, high))) {
                 low = average(low, high);
             }
             if (value < arr.get(average(low, high))) {
                 high = average(low, high) - 1;
             }
-            else {
+            else if (average(low, high) == value) {
                 return average(low, high);
             }
         }
