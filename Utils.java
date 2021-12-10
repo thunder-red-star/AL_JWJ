@@ -8,13 +8,17 @@ public class Utils {
         int low = 0;
         int high = arr.size() - 1;
         while (low <= high) {
-            if (value == arr.get(average(low, high))) {
+            if (value > arr.get(average(low, high))) {
                 return average(low, high);
             }
             if (value < arr.get(average(low, high))) {
                 high = average(low, high) - 1;
             }
-
+            else {
+                return average(low, high);
+            }
         }
     }
+
+
 }
