@@ -9,6 +9,7 @@ public class Utils {
     public static int binarySearchInsert (ArrayList<Integer> arr, int value) {
         int low = 0;
         int high = arr.size() - 1;
+        System.out.println(arr.size())
         while (low <= high) {
             if (value > arr.get(average(low, high))) {
                 low = average(low, high);

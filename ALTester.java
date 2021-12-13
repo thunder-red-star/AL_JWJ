@@ -11,5 +11,6 @@ public class ALTester {
         list.add(8);
         list.add(9);
         list.add(10);
+        System.out.println(list.toString());
     }
 }
