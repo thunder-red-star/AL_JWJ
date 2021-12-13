@@ -7,11 +7,12 @@ public class Utils {
     }
 
     public static int binarySearchInsert (ArrayList<Integer> arr, int value) {
+        if (arr.size() == 1) {
+            return 1;
+        }
         int low = 0;
         int high = arr.size() - 1;
         while (low <= high) {
-            System.out.println(arr.toString());
-            System.out.println("value: " + value + " average: " + arr.get(average(low, high)) + " low: " + low + " high: " + high);
             if (value > arr.get(average(low, high))) {
                 low = average(low, high);
             }
@@ -19,10 +20,10 @@ public class Utils {
                 high = average(low, high);
             }
             else if (high<low+2) {
-                return high;
+                return low+1;
             }
         }
-        return 0;
+        return arr.size();
     }
 
     public static int binarySearchFind (ArrayList<Integer> arr, int value) {
