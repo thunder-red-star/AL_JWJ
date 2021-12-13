@@ -6,7 +6,7 @@ public class Utils {
         return (int) Math.round((a + b) / 2.0);
     }
 
-    public static int binarySearch (ArrayList<Integer> arr, int value) {
+    public static int binarySearchInsert (ArrayList<Integer> arr, int value) {
         int low = 0;
         int high = arr.size() - 1;
         while (low <= high) {
@@ -14,33 +14,34 @@ public class Utils {
             if (value > arr.get(average(low, high))) {
                 low = average(low, high);
             }
-            if (value < arr.get(average(low, high))) {
-                high = average(low, high) - 1;
+            if (value <= arr.get(average(low, high))) {
+                high = average(low, high);
             }
-            else if (average(low, high) == value) {
-                return average(low, high);
+            else if (high<low+2) {
+                return high;
+            }
+        }
+        return 0;
+    }
+    
+    public static int binarySearchFind (ArrayList<Integer> arr, int value) {
+        int low = 0;
+        int high = arr.size() - 1;
+        while (low <= high) {
+            System.out.println(low + " " + high);
+            if (value > arr.get(average(low, high))) {
+                low = average(low, high)+1;
+            }
+            if (value < arr.get(average(low, high))) {
+                high = average(low, high)-1;
+            }
+            else if (value === arr.get(average(low, high))) {
+                return average(low,high);
             }
         }
         return -1;
     }
     
-    // binary search for an integer in an array
-    public static int binarySearch (int[] arr, int value) {
-        int low = 0;
-        int high = arr.length - 1;
-        while (low <= high) {
-            if (value > arr[average(low, high)]) {
-                low = average(low, high);
-            }
-            if (value < arr[average(low, high)]) {
-                high = average(low, high);
-            }
-            else {
-                return average(low, high);
-            }
-        }
-        return -1;
-    }
 
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<Integer>();
