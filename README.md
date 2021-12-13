@@ -1,2 +1,4 @@
-# lab02
-arraylist
+# TNPG: JWJ
+Roster: Jefford Shau, William Vongphanith, William Kirmayer
+
+
