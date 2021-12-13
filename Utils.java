@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Utils {
     // average of two integers
     public static int average(int a, int b) {
-        return (int) Math.round((a + b) / 2.0);
+        return (a + b) / 2;
     }
 
     public static int binarySearchInsert (ArrayList<Integer> arr, int value) {
