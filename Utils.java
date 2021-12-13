@@ -3,14 +3,15 @@ import java.util.ArrayList;
 public class Utils {
     // average of two integers
     public static int average(int a, int b) {
-        return (int) Math.round((a + b) / 2.0);
+        return (int) Math.round((a + b) / 2);
     }
 
     public static int binarySearchInsert (ArrayList<Integer> arr, int value) {
         int low = 0;
         int high = arr.size() - 1;
-        System.out.println(arr.size())
         while (low <= high) {
+            System.out.println(arr.toString());
+            System.out.println("value: " + value + " average: " + arr.get(average(low, high)) + " low: " + low + " high: " + high);
             if (value > arr.get(average(low, high))) {
                 low = average(low, high);
             }

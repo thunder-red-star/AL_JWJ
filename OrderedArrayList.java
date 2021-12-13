@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class OrderedArrayList {
 	private ArrayList<Integer> _data;
@@ -6,7 +6,6 @@ public class OrderedArrayList {
 		_data = new ArrayList<Integer>();
 	}
 	public void add(int value){
-	System.out.println(value);
 		int idx = Utils.binarySearchInsert(_data,value);
 		_data.add(idx,value);
 	}
