@@ -6,10 +6,19 @@ public class OrderedArrayList {
 		_data = new ArrayList<Integer>();
 	}
 	public void add(int value){
-		int idx = Utils.binarySearchInsert(_data,value);
-		_data.add(idx,value);
+		int idx = Utils.binarySearchInsert(_data, value);
+		_data.add(idx, value);
 	}
-	
+
+  public void remove(int index) {
+    _data.remove(index);
+  }
+
+  public void set(int index, int value) {
+    _data.remove(index);
+    _data.add(value);
+  }
+
 	public String toString(){
         	String retStr = "[";
         	for( int i = 0; i < _data.size(); i++ ) {
@@ -20,5 +29,5 @@ public class OrderedArrayList {
         	retStr += "]";
         	return retStr;
    	}
-   		
+
 }
