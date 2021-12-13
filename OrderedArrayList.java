@@ -14,9 +14,21 @@ public class OrderedArrayList {
     _data.remove(index);
   }
 
+  public int get(int index) {
+    return _data.get(index);
+  }
+
+  public int size() {
+    return _data.size();
+  }
+
   public void set(int index, int value) {
-    _data.remove(index);
-    _data.add(value);
+		_data.set(index, value);
+		/*
+		Jefford why are you causing yourself undue pain here?
+		_data.remove(index);
+		_data.add(value);
+		 */
   }
 
 	public String toString(){
