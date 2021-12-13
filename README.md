@@ -1,5 +1,5 @@
 # TNPG: JWJ
-Roster: Jefford Shau, William Vongphanith, William Kirmayer
+Roster: Jefford Shau, William Vongphanith, Jacob Kirmayer
 
 ## ALTester
 Basically works by creating an OrderedArrayList, then adds a pile of numbers to it (including one that is out of order, to test our search placer), then prints the OrderedArrayList. After, it removes some numbers from the OrderedArrayList.
